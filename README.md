@@ -1,7 +1,11 @@
 Features
+
 -> Current Time Display: Shows the current time with updating every second.
+
 -> Set Alarm: Allows users to set alarms by selecting hours, minutes, seconds, and AM/PM.
+
 -> Alarm Ringing: Plays an audio alarm and alerts the user when the set alarm time matches the current time.
+
 -> Manage Alarms: Displays a list of set alarms with the option to delete alarms.
 
 Usage
