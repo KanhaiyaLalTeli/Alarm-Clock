@@ -1,0 +1,63 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#heading{
+    font-size: 2rem;
+    text-align: center;
+}
+#container{
+    height: 400px;
+    width: 500px;
+    text-align: center;
+    background-color: antiquewhite;
+    border-radius: 50px;
+}
+#imageContainer{
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    display: block;
+    margin: 0.5rem;
+}
+#imageContainer img{
+    width: 10%;
+    height: 100%;
+    background-size: cover;
+}
+#currentTime{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+/* #hours,#minutes,#second ,#amPm{
+    height: 2rem; */
+    /* background-color: lightblue;
+    max-height:20%
+} */
+
+#buttons button{
+    margin: 0.5rem;
+    background-color: lightblue;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#alarmListContainer{
+    text-align: left;
+}
+
+.deleteBtn{
+    margin: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+#alarmListContainer{
+    margin: 1rem;
+    font-weight: 600;
+}
