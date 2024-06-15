@@ -110,7 +110,7 @@ function ringAlarm(){
          if(now===alarmTime)
              {
                   audio.play();
-                //   alert("Alarm Time "+ now);
+                  alert("Alarm Time "+ now);
                     stopAlarm.addEventListener('click',function(){
                      audio.pause();
                     })
