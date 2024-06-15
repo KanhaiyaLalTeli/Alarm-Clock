@@ -9,20 +9,20 @@ body{
 }
 #container{
     height: 400px;
-    width: 500px;
+    width: 350px;
     text-align: center;
     background-color: antiquewhite;
     border-radius: 50px;
 }
 #imageContainer{
-    width: 500px;
+    width: 350px;
     height: 50px;
     text-align: center;
     display: block;
     margin: 0.5rem;
 }
 #imageContainer img{
-    width: 10%;
+    width: 15%;
     height: 100%;
     background-size: cover;
 }
@@ -30,11 +30,7 @@ body{
     font-size: 1.3rem;
     font-weight: 600;
 }
-/* #hours,#minutes,#second ,#amPm{
-    height: 2rem; */
-    /* background-color: lightblue;
-    max-height:20%
-} */
+
 
 #buttons button{
     margin: 0.5rem;

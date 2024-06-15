@@ -23,20 +23,34 @@ checkInput(hours);
 checkInput(minutes);
 checkInput(seconds);
 
-setInterval(function(){
+
+function currentTime(){
     const time=new Date();
-    var hours1 = time.getHours();
+    var hours = time.getHours();
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
+
+    if(hours==12){
+        var now=`${(hours).toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')} PM`;
+    }
     
-    if(hours1>11)
+    else if(hours>11)
         {
-            var now=`${(hours1-12).toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')} PM`;            
+            var now=`${(hours-12).toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')} PM`;            
         }
     else{
-        var now=`${hours1.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')} AM`;        
+        var now=`${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')} AM`;        
     }
+
+    return now;
+
+}
+
+setInterval(function(){
+
+    const now=currentTime();  
     currentTimeShow.innerText=now;  
+
 },1000)
 
 alarmSetButton.addEventListener('click',setAlarm)
@@ -88,20 +102,10 @@ function setAlarm(){
 function ringAlarm(){
 
     setInterval(function(){
-     const time=new Date();
-     const hours = time.getHours();
-     const minutes = time.getMinutes();
-     const seconds = time.getSeconds();
- 
-     if(hours>11)
-         {
-             var now=`${(hours-12).toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')} PM`;            
-         }
-     else{
-         var now=`${hours} : ${minutes} : ${seconds} AM`;        
-     }
- 
-     alarmListArray.forEach((key)=>{
+     
+    const now=currentTime();
+
+        alarmListArray.forEach((key)=>{
          let alarmTime=`${(key.Hours).toString().padStart(2, '0')} : ${key.Minutes.toString().padStart(2, '0')} : ${key.Seconds.toString().padStart(2, '0')} ${key.AmPm}`;
          if(now===alarmTime)
              {
@@ -110,7 +114,7 @@ function ringAlarm(){
                     stopAlarm.addEventListener('click',function(){
                      audio.pause();
                     })
-             }
+            }
      })  
  },1000)
  }
